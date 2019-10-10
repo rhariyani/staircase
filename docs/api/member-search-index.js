@@ -1,0 +1,1 @@
+memberSearchIndex = [{"p":"edu.cnm.deepdive","c":"Staircase","l":"buildFibonacciStaircase(int)"},{"p":"edu.cnm.deepdive","c":"Staircase","l":"buildLinearStaircase(int)"}]

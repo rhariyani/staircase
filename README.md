@@ -1,45 +1,3 @@
-### Staircase problem 
-
-(These instructions can also be found in the Javadoc comments of this project.)
-
-The static methods in this class build string array "staircases".
-Consider a text staircase of height 6:
-
-      *
-     **
-    ***
-   ****
-  *****
- ******
-Note that each line consists of spaces and the asterisk character. Further, each line has the exact same number of characters, so that (when a monospace font is used), the right edges line up. Finally, note that though the last line above appears to have a leading space, the bottom step of the staircases produced by your code should have no leading spaces.
-
-Your task will be to write code to construct such staircases, and return them as an array of strings. The 1stelement will have a single asterisk, with leading spaces as necessary; the last element will have asterisks only; all the previous strings in the array should be left-padded as necessary so that all of the strings are of the same length – i.e. when printed out, one string per line, the right edges will be aligned in the printout.
-
-For the first method, the staircase is linear – that is, when counting from the top of the staircase down, each successive string has 1 more asterisk than the previous.
-
-For the second method, the staircase doesn't ascend/descend in a linear fashion, but as a Fibonacci sequence. That is, the top 2 steps have one asterisk each, but each successively lower step has as many asterisks as the sum of the previous 2. For example, a Fibonacci staircase of height 6 would appear as the following:
-
-         *
-         *
-        **
-       ***
-     *****
- *********
-Assumptions
-For the linear staircase, the value of height parameter will always be in the range 2 to 1,000,000, inclusive.
-For the Fibonacci staircase, the value of height parameter will always be in the range 2 to 30, inclusive.
-Whether your code prints anything out is up to you. What it must do is return a String[] – i.e. an array of strings.
-Basic test cases
-Please note that the values below are guaranteed to be included in the test cases; others may be included at our discretion. However, if your code works correctly with the cases below, and assuming it doesn't simply have hard-coded conditions looking for these specific input values, it should have no problem with additional test values. In other words, your code should include the necessary computations to handle general cases, and not just those shown here.
-There are 25 points available for this problem: 
-
-* 15 points for implementing the solutions to the problem in the given methods.
-* 10 points for implementing the JUnit tests with the specified test cases.
-
-There are 10 extra credit points available for this problem, which can be earned by implementing method overloads, and adding relevant test cases to the unit tests. These opportunities are described in more detail in the Javadocs.
-
-Submission of completed code (including JUnit test code) is due by 4:30 PM MDT, 22 October, 2018. To submit your code, commit all your changes to Git, and push to your forked repository on GitHub (**do not** create a new repository). 
-
 ## Value
 
 * Basic implementation: 10 points
@@ -58,6 +16,8 @@ In the `edu.cnm.deepdive.Staircase` class, the `buildLinearStaircase` method is 
 ```java
 public static String[] buildLinearStaircase(int height)
 ```
+
+For more method declaration details, see the [Javadoc documentation](docs/api/edu/cnm/deepdive/Staircase.html#buildLinearStaircase(int)).
 
 For the basic task, complete the implementation of this method, according to the following description and specifications:
 
@@ -95,15 +55,11 @@ for (String step : stairs) {
 
 would print exactly the staircase shown above. Element 0 of the array returned from `buildLinearStaircase` is made up of almost all spaces and a single asterisk; element 1 has slightly fewer spaces and 2 asterisks; and so on.
 
+(Please do not be confused by the use of the word "print", above. Your task is _not_ to write code that prints anything; instead, your task is to complete the implementation of the `buildLinearStaircase` method so that it returns the expected result for any given input. The example above is simply printing the result that should be returned by a complete, correct implementation.)
+
 #### Assumptions 
 
 * The value of `height` parameter will always be in the range 2 to 1,000,000, inclusive.
-
-#### Hints 
-
-* Whether your code prints anything out is up to you. What it _must_ do is return a `String[]`&mdash;i.e. an array of strings.
-
-* Instead of building each step from scratch, consider starting either with either the first (top) or last (bottom) step, and progressively transforming that step to the one below (or above) it, and then repeating that process for all of the steps in the staircase. Is there a starting string, and sequence of substring and concatenation operations that can be applied over and over, to build the staircase?
 
 ### Unit tests
 
@@ -117,6 +73,20 @@ For unit testing credit, use JUnit5 to verify your code with the following input
 
 In evaluating your implementation, we reserve the right to include additional test cases; code that satisfies the requirements stated above should pass all such additional tests.
  
+### Hints 
+
+* The `Staircase.buildLinearStaircase` method to be completed is `static`; there is no need to create instances of `Staircase` (and arguably no benefit in doing so).
+
+* You may find it useful to create one or more additional `static` methods as "helpers"; the problem can be solved without doing so, however.
+
+* Do not hesitate to declare any constants (`static final` fields) that you feel might simplify or clarify your code.
+
+* Whether your code prints anything out is up to you. What it _must_ do is return a `String[]`&mdash;i.e. an array of strings.
+
+* Instead of building each step from scratch, consider starting either with either the first (top) or last (bottom) step, and progressively transforming that step to the one below (or above) it, and then repeating that process for all of the steps in the staircase. Is there a starting string, and sequence of substring and concatenation operations that can be applied over and over, to build the staircase?
+
+* The method to be completed includes a `TODO` comment to that effect.    
+
 ## Extra credit 
 
 In this task, you will implement and test another staircase generating method; this time, however, the number of asterisks will increase not in a linear fashion as we go down the stair, but following the Fibonacci sequence.
@@ -128,6 +98,8 @@ For extra credit, complete the implementation of the `buildFibonacciStaircase` m
 ```java
 public static String[] buildFibonacciStaircase`(int height)
 ```
+
+For more method declaration details, see the [Javadoc documentation](docs/api/edu/cnm/deepdive/Staircase.html#buildFibonacciStaircase(int)).
 
 The functionality of this method is very similar to that of `buildLinearStaircase`, with a couple of differences:
 
@@ -163,6 +135,8 @@ would print
 *********
 ```
 
+(Please do not be confused by the use of the word "print", above. Your task is _not_ to write code that prints anything; instead, your task is to complete the implementation of the `buildFibonacciStaircase` method so that it returns the expected result for any given input. The example above is simply printing the result that should be returned by a complete, correct implementation.)
+
 #### Assumptions 
 
 * The value of `height` parameter will always be in the range 2 to 30, inclusive.
@@ -178,3 +152,17 @@ For unit testing credit on the extra credit portion of the problem, use JUnit5 t
 | `6` | `{"       *", "       *", "      **", "     ***", "   *****", "********"}` |
 
 In evaluating your implementation, we reserve the right to include additional test cases; code that satisfies the requirements stated above should pass all such additional tests.
+
+### Hints 
+
+* The `Staircase.buildFibonacciStaircase` method to be completed is `static`; there is no need to create instances of `Staircase` (and arguably no benefit in doing so).
+
+* You may find it useful to create one or more additional `static` methods as "helpers"; the problem can be solved without doing so, however.
+
+* Do not hesitate to declare any constants (`static final` fields) that you feel might simplify or clarify your code.
+
+* Whether your code prints anything out is up to you. What it _must_ do is return a `String[]`&mdash;i.e. an array of strings.
+
+* Instead of building each step from scratch, consider starting either with either the first (top) or last (bottom) step, and progressively transforming that step to the one below (or above) it, and then repeating that process for all of the steps in the staircase. Is there a starting string, and sequence of substring and concatenation operations that can be applied over and over, to build the staircase?
+
+* The method to be completed includes a `TODO` comment to that effect.    
