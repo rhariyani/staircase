@@ -107,14 +107,6 @@ The functionality of this method is very similar to that of `buildLinearStaircas
 
 * The bottom step (the last element of the array) once again contains only asterisks; however, the number of asterisks it contains is not `height` (since this isn't a linear sequence), but is instead the Fibonacci number corresponding to that step. Thus, all of the steps above that _must still_ be left-padded with spaces, so that each element of the array has the same number of characters as the bottom step.
 
-* For all `i`, where `0 < i < data.length -1`, the value of element `i` in the returned array must be computed as
-
-    ```java
-    Math.round((data[i - 1] + 2 * data[i] + data[i + 1]) / 4f)
-    ```
-
-* For `i = 0` and `i = data.length - 1`, the value of element `i` in the returned array is simply the value of `data[i]`.
-
 For example, the code fragment
 
 ```java
