@@ -17,7 +17,7 @@ In the `edu.cnm.deepdive.Staircase` class, the `buildLinearStaircase` method is 
 public static String[] buildLinearStaircase(int height)
 ```
 
-For more method declaration details, see the [Javadoc documentation](docs/api/edu/cnm/deepdive/Staircase.html#buildLinearStaircase(int)).
+For more method declaration details, see the [Javadoc documentation](api/edu/cnm/deepdive/Staircase.html#buildLinearStaircase(int)).
 
 For the basic task, complete the implementation of this method, according to the following description and specifications:
 
@@ -99,7 +99,7 @@ For extra credit, complete the implementation of the `buildFibonacciStaircase` m
 public static String[] buildFibonacciStaircase`(int height)
 ```
 
-For more method declaration details, see the [Javadoc documentation](docs/api/edu/cnm/deepdive/Staircase.html#buildFibonacciStaircase(int)).
+For more method declaration details, see the [Javadoc documentation](api/edu/cnm/deepdive/Staircase.html#buildFibonacciStaircase(int)).
 
 The functionality of this method is very similar to that of `buildLinearStaircase`, with a couple of differences:
 
