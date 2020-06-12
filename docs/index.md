@@ -1,8 +1,14 @@
+---
+title: Staircase strings
+description: "Representing numeric sequences using `String` arrays."
+layout: default
+---
+
 ## Value
 
 * Basic implementation: 10 points
 * Basic unit tests: 5 points
-* Extra credit implementation: 5 points
+* Extra credit implementation: 10 points
 * Extra credit unit tests: 5 points
 
 ## Basic task
@@ -44,18 +50,28 @@ Given the above, we have:
 
 * The "bottom step" (the last element in the array) consists entirely of asterisk characters. Each step up from that has one fewer asterisk character, and is left-padded with spaces, so that the length of each element is the same&mdash;namely, `height` characters.
 
-So, for example, the code fragment
+So, for example, t
 
 ```java
-String[] stairs = Staircase.buildLinearStaircase(6);
-for (String step : stairs) {
-  System.out.println(step);
+Staircase.buildLinearStaircase(6)
 }
 ```
 
-would print exactly the staircase shown above. Element 0 of the array returned from `buildLinearStaircase` is made up of almost all spaces and a single asterisk; element 1 has slightly fewer spaces and 2 asterisks; and so on.
+would return the staircase shown above as a `String[]`:
 
-(Please do not be confused by the use of the word "print", above. Your task is _not_ to write code that prints anything; instead, your task is to complete the implementation of the `buildLinearStaircase` method so that it returns the expected result for any given input. The example above is simply printing the result that should be returned by a complete, correct implementation.)
+```
+{
+    "     *",
+    "    **",
+    "   ***".
+    "  ****",
+    " *****",
+    "******"
+}
+```
+
+
+. Element 0 of the array returned from `buildLinearStaircase` is made up of almost all spaces and a single asterisk; element 1 has slightly fewer spaces and 2 asterisks; and so on.
 
 #### Assumptions 
 
@@ -83,13 +99,11 @@ In evaluating your implementation, we reserve the right to include additional te
 
 * Whether your code prints anything out is up to you. What it _must_ do is return a `String[]`&mdash;i.e. an array of strings.
 
-* Instead of building each step from scratch, consider starting either with either the first (top) or last (bottom) step, and progressively transforming that step to the one below (or above) it, and then repeating that process for all of the steps in the staircase. Is there a starting string, and sequence of substring and concatenation operations that can be applied over and over, to build the staircase?
-
 * The method to be completed includes a `TODO` comment to that effect.    
 
 ## Extra credit 
 
-In this task, you will implement and test another staircase generating method; this time, however, the number of asterisks will increase not in a linear fashion as we go down the stair, but following the Fibonacci sequence.
+In this task, you will implement and test another staircase generating method; this time, however, the number of asterisks will increase in a nonlinear fashion, following the Fibonacci sequence as we descend the stairs.
 
 ### Implementation
 
@@ -107,31 +121,28 @@ The functionality of this method is very similar to that of `buildLinearStaircas
 
 * The bottom step (the last element of the array) once again contains only asterisks; however, the number of asterisks it contains is not `height` (since this isn't a linear sequence), but is instead the Fibonacci number corresponding to that step. Thus, all of the steps above that _must still_ be left-padded with spaces, so that each element of the array has the same number of characters as the bottom step.
 
-For example, the code fragment
+For example, 
 
 ```java
-String[] stairs = Staircase.buildFibonacciStaircase(6);
-for (String step : stairs) {
-  System.out.println(step);
+Staircase.buildFibonacciStaircase(6)
+```
+
+would return 
+
+```
+{
+    "       *",
+    "       *",
+    "      **".
+    "     ***",
+    "   *****",
+    "********"
 }
 ```
 
-would print 
-
-```
-        *
-        *
-       **
-      ***
-    *****
-*********
-```
-
-(Please do not be confused by the use of the word "print", above. Your task is _not_ to write code that prints anything; instead, your task is to complete the implementation of the `buildFibonacciStaircase` method so that it returns the expected result for any given input. The example above is simply printing the result that should be returned by a complete, correct implementation.)
-
 #### Assumptions 
 
-* The value of `height` parameter will always be in the range 2 to 30, inclusive.
+* The value of the `height` parameter will always be in the range 2 to 30, inclusive.
 
 ### Unit tests
 
@@ -155,6 +166,8 @@ In evaluating your implementation, we reserve the right to include additional te
 
 * Whether your code prints anything out is up to you. What it _must_ do is return a `String[]`&mdash;i.e. an array of strings.
 
-* Instead of building each step from scratch, consider starting either with either the first (top) or last (bottom) step, and progressively transforming that step to the one below (or above) it, and then repeating that process for all of the steps in the staircase. Is there a starting string, and sequence of substring and concatenation operations that can be applied over and over, to build the staircase?
+* Consider building the `String[]` in 2 passes: one to generate the asterisk characters for each step, and another to pad each step with the appropriate number of spaces.
+
+* After the initial 2 values, the Fibonacci sequence follows the recurrence relation $F_n = F_{n - 1} + F_{n - 2}$. That is, each value is the sum of the previous 2 values. One non-obvious way of using that recurrence, in this case, is to obtain a string of asterisk characters from the concatenation of the previous 2 strings of asterisks.
 
 * The method to be completed includes a `TODO` comment to that effect.    
