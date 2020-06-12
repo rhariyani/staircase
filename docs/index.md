@@ -80,7 +80,7 @@ would return the staircase shown above as a `String[]`:
 
 For unit testing credit, use JUnit5 to verify your code with the following inputs and expected outputs:
 
-| `height` | Expected return value |
+| `height` | Expected return value of `Staircase.buildLinearStaircase(height)`|
 |:--------:|:---------------------:|
 | `2` | `{" *", "**"}` |
 | `5` | `{"    *", "   **", "  ***", " ****", "*****"}` |
@@ -149,7 +149,7 @@ Here, `height` is 6, but the length of each element of the array is 8, since the
 
 For unit testing credit on the extra credit portion of the problem, use JUnit5 to verify your code with the following inputs and expected outputs:
 
-| `height` | Expected return value |
+| `height` | Expected return value of `Staircase.buildFibonacciStaircase(height)`|
 |:--------:|:---------------------:|
 | `2` | `{"*", "*"}` |
 | `5` | `{"    *", "    *", "   **", "  ***", "*****"}` |
