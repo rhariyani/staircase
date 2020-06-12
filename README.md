@@ -1,6 +1,6 @@
 # Staircase strings
 
-This project specifies a programming problem (constructing and returning `String[]` containing simple numeric sequences embodied in repeated characters) used in an assignment, extra credit opportunity or practical exam of the [Deep Dive Coding](https://deepdivecoding.com/) [Java + Android bootcamp](https://deepdivecoding.com/java-android/).
+This project specifies a programming problem (constructing and returning a `String[]` containing a simple numeric sequence embodied in repeated characters) used in an assignment, extra credit opportunity or practical exam of the [Deep Dive Coding](https://deepdivecoding.com/) [Java + Android bootcamp](https://deepdivecoding.com/java-android/).
 
 ## License information
 
