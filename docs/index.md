@@ -54,12 +54,11 @@ So, for example, t
 
 ```java
 Staircase.buildLinearStaircase(6)
-}
 ```
 
 would return the staircase shown above as a `String[]`:
 
-```
+```java
 {
     "     *",
     "    **",
@@ -119,7 +118,7 @@ The functionality of this method is very similar to that of `buildLinearStaircas
 
 * The first 2 elements of the returned array (i.e. the top 2 steps) have 1 asterisk each (left-padded with spaces), the next element has 2 asterisks, the next has 3, then 5, 8, 13, and so on, in the Fibonacci sequence. 
 
-* The bottom step (the last element of the array) once again contains only asterisks; however, the number of asterisks it contains is not `height` (since this isn't a linear sequence), but is instead the Fibonacci number corresponding to that step. Thus, all of the steps above that _must still_ be left-padded with spaces, so that each element of the array has the same number of characters as the bottom step.
+* The bottom step (the last element of the array) once again contains only asterisks; however, the number of asterisks it contains is not necessarily `height` (since this isn't a linear sequence), but is instead the Fibonacci number corresponding to that step. .
 
 For example, 
 
@@ -129,7 +128,7 @@ Staircase.buildFibonacciStaircase(6)
 
 would return 
 
-```
+```java
 {
     "       *",
     "       *",
@@ -140,6 +139,8 @@ would return
 }
 ```
 
+Here, `height` is 6, but the length of each element of the array is 8, since the Fibonacci number corresponding to the last step is 8. Thus, each of the elements preceding the last one must be left-padded with spaces, as required, for a total length of 8 characters.
+ 
 #### Assumptions 
 
 * The value of the `height` parameter will always be in the range 2 to 30, inclusive.
